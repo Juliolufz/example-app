@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('productos','App\Http\Controllers\ProductoController')->middleware('can:productos.index')->names('productos');
+Route::resource('productos','App\Http\Controllers\ProductoController')->names('productos');
 
 Route::resource('users', 'App\Http\Controllers\UserController')->names('users');
 
