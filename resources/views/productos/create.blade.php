@@ -15,11 +15,11 @@
     </div>
     <div class="mt-3">
         <label for="" class="form-label" >PRECIO</label>
-        <input type="number" class="form-control" id="precio" name="precio" required">
+        <input type="number" class="form-control" id="precio" name="precio" required>
     </div>
     <div class="mt-3">
       <label for="" class="form-label">CANTIDAD</label>
-      <input type="number" class="form-control" id="cantidad" name="cantidad" required >
+      <input type="number" class="form-control" id="cantidad" name="cantidad" required>
     </div>
     <div class="mb-3 mt-3">
         <label for="" class="form-label">CATEGORIA</label>

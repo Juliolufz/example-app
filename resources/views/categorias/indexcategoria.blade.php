@@ -7,7 +7,7 @@
 @endcan
 <div class="card">
 <div class="card-body">
-<table class="table table-striped"id="Table">
+<table class="table table-striped" id="Table">
     <thead>
       <tr>
         <th scope="col">Nombre</th>
@@ -23,23 +23,21 @@
           <td>{{$categoria->descripcion}}</td>
           <td>
             @can('categorias.edit')
-            <a href="{{route('categorias.edit',$categoria->id)}}" class="btn btn-primary btn-sm mr-3" >EDITAR</a>
+            <a href="{{route('categorias.edit',$categoria->id)}}" class="btn btn-primary btn-sm mt-2" >EDITAR</a>
+            <input type="hidden" value="{{$categoria->id}}">
             @endcan
-            @can('productos.destroy')
+            @can('categorias.destroy')
             <span type="submit" class="btn btn-danger btn-sm mt-2 eliminar">ELIMINAR</span>
             @endcan
-
           </td>
         </tr>
         @endforeach
-
       </tbody>
   </table>
 </div>
 </div>
 
   @endsection
-
   @section('jst')
   <script>
 

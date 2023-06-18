@@ -4,14 +4,13 @@
     <h1>SUBCATEGORIAS</h1>
 @endsection
 
-
 @section('content')
-@can('subcategorias.edit')
+@can('subcategorias.create')
 <a href="{{route('subcategorias.create')}}" class="btn btn-success mb-4">CREAR</a>
 @endcan
 <div class="card">
     <div class="card-body">
-<table class="table" id="Table">
+<table class="table table-striped" id="Table">
       <thead>
         <tr>
           <th scope="col">CATEGORIA</th>
@@ -31,8 +30,9 @@
 
             @can('subcategorias.edit')
             <a href="{{route('subcategorias.edit',$subcategoria->id)}}" class="btn btn-primary btn-sm mr-3">EDITAR</a>
+            <input type="hidden" value="{{$subcategoria->id}}">
             @endcan
-            @can('subcategorias.edit')
+            @can('subcategorias.destroy')
             <span type="submit" class="btn btn-danger btn-sm eliminar">ELIMINAR</span>
             @endcan
 
