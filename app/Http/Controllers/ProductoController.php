@@ -14,6 +14,11 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('can:productos.index')->only('index');
+        $this->middleware('can:productos.edit')->only('edit,update');
+    }
     public function index()
     {
         $productos = Producto::select('c.nombre as cnombre','sub.nombre as subnombre','productos.*')

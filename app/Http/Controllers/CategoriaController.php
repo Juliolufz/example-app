@@ -7,6 +7,11 @@ use App\Models\categoria;
 
 class CategoriaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:categorias.index')->only('index');
+        $this->middleware('can:categorias.edit')->only('edit,update');
+    }
     /**
      * Display a listing of the resource.
      */

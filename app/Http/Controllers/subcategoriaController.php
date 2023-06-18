@@ -8,6 +8,11 @@ use App\Models\categoria;
 
 class subcategoriaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:subcategorias.index')->only('index');
+        $this->middleware('can:subcategorias.edit')->only('edit,update');
+    }
     /**
      * Display a listing of the resource.
      */
