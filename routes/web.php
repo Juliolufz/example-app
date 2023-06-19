@@ -26,6 +26,6 @@ Route::resource('productos','App\Http\Controllers\ProductoController')->names('p
 Route::resource('users', 'App\Http\Controllers\UserController')->names('users');
 
 
-Route::resource('categoria', 'App\Http\Controllers\CategoriaController')->middleware('can:categorias.index')->names('categorias');
+Route::resource('categoria', 'App\Http\Controllers\CategoriaController')->names('categorias');
 
-Route::resource('subcategoria', 'App\Http\Controllers\subcategoriaController')->middleware('can:subproductos.index')->names('subcategorias');
+Route::resource('subcategoria', 'App\Http\Controllers\subcategoriaController')->names('subcategorias');

@@ -17,7 +17,7 @@ class ProductoController extends Controller
     public function __construct()
     {
         $this->middleware('can:productos.index')->only('index');
-        $this->middleware('can:productos.edit')->only('edit,update');
+        $this->middleware('can:productos.edit')->only('edit','update');
     }
     public function index()
     {
@@ -77,7 +77,7 @@ class ProductoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, int $id)
     {
         $producto = Producto::find($id);
         $producto->nombre = $request->input('nombre');

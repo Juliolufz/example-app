@@ -1,7 +1,7 @@
 @extends("layouts.plantilla")
 
 @section('content')
-
+<br>
 @can('productos.create')
 <a href="{{route('productos.create')}}" class="btn btn-success mb-4">CREAR</a>
 @endcan
