@@ -27,7 +27,7 @@
             <label for="categoria" class="form-label">CATEGORIA</label>
             <select onchange="opciones()" class="form-control" id="categoria" name="categoria">
                 @foreach ($categorias as $categoria)
-                    <option value="{{ $categoria->id }}"
+                    <option value="{{ $categoria->id}}"
                         {{ $categoria->id === $producto->categorias_id ? 'selected' : '' }}>{{ $categoria->nombre }}</option>
                 @endforeach
             </select>
