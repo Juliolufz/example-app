@@ -15,7 +15,7 @@
                 @foreach($subcategorias as $subcategoria)
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <img src="{{ $subcategoria->imagen }}" class="card-img-top" alt="{{ $subcategoria->nombre }}">
+                        <img src="{{ $subcategoria->imagen }}" class="card-img-top" alt="{{ $subcategoria->nombre }}" width="100px" height="100px">
                         <div class="card-body">
                             <h4 class="card-title">{{ $subcategoria->cnombre }}</h4>
                             <p class="card-text">{{ $subcategoria->descripcion }}</p>

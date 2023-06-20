@@ -13,7 +13,7 @@
                 @foreach($productos as $producto)
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <img src="{{ $producto->imagen }}" class="card-img-top" alt="{{ $producto->nombre }}">
+                        <img src="{{ $producto->file }}" class="card-img-top" alt="{{ $producto->nombre }}" width="100px" height="300px">
                         <div class="card-body">
                             <h4 class="card-title">{{ $producto->nombre }}</h4>
                             <p class="card-text">{{ $producto->descripcion }}</p>
@@ -25,7 +25,6 @@
                                 class="btn btn-primary btn-sm mr-3">EDITAR</a>
                         @endcan
                         @can('productos.destroy')
-                            <input type="hidden" value="{{ $producto->id }}">
                             <span class="btn btn-danger btn-sm eliminar"data-id="{{ $producto->id }}">ELIMINAR</span>
                         @endcan
                         </div>
@@ -65,7 +64,7 @@
                             'success'
                         );
                         // Eliminar el elemento eliminado de la interfaz
-                        $(`.eliminar[data-id=${id}]`).closest('.col-md-4').remove();
+                            $(`.eliminar[data-id=${id}]`).closest('.col-md-4').remove();
                     },
                     error: function(respuesta) {
                         Swal.fire(
