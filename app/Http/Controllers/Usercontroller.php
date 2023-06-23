@@ -29,7 +29,7 @@ class Usercontroller extends Controller
     {
         $role = Role::all();
 
-        $user = User::findOrfail($id);
+        $user = User::find($id);
 
         return view('editli',compact('role','user'));
     }
@@ -43,7 +43,7 @@ class Usercontroller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $user = User::findOrfail($id);
+        $user = User::find($id);
         $user->roles()->sync($request->rol);
 
         if ($request->hasfile('file')) {
