@@ -12,13 +12,13 @@
                 @foreach($categorias as $categoria)
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <img src="{{ $categoria->imagen }}" class="card-img-top" alt="{{ $categoria->nombre }}">
+                        <img src="{{ $categoria->file }}" class="card-img-top" alt="{{ $categoria->nombre }}" width="100px" height="300px">
                         <div class="card-body">
 
                             <p class="card-text">{{ $categoria->descripcion }}</p>
                             <p class="card-price"> {{ $categoria->nombre }}</p>
                             @can('categorias.edit')
-                            <a href="{{ route('productos.edit', $categoria->id) }}"
+                            <a href="{{ route('categorias.edit', $categoria->id) }}"
                                 class="btn btn-primary btn-sm mr-3">EDITAR</a>
                         @endcan
                         @can('categorias.destroy')

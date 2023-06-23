@@ -7,7 +7,7 @@
 
 @section('content')
 
-<form action="{{ route('subcategorias.store')}}" method="POST">
+<form action="{{ route('subcategorias.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="mb-3 mt-3">
         <label for="" class="form-label">NOMBRE</label>
@@ -25,6 +25,10 @@
         @endforeach
         </select>
     </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">FOTO DE PRODUCTO</label>
+        <input id="file" type="file" class="form-control" name="file" required accept="image/*">
+      </div>
     <div class="mt-5">
         <button type="submit" class="btn btn-success mr-2">GUARDAR</button>
         <a href="{{route('subcategorias.index')}}" class="btn btn-danger">CANCELAR</a>

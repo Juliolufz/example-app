@@ -7,7 +7,7 @@
 
 @section('content')
 
-<form action="{{ route('categorias.store')}}" method="POST">
+<form action="{{ route('categorias.store')}}" method="POST"  enctype="multipart/form-data">
     @csrf
     <div class="mb-3 mt-3">
       <label for="" class="form-label">NOMBRE</label>
@@ -16,6 +16,11 @@
     <div class="mt-3">
         <label for="" class="form-label">DESCRIPCION</label>
         <input type="text" class="form-control" id="cantidad" name="descripcion" required >
+      </div>
+
+      <div class="mb-3 mt-3">
+        <label class="form-label">FOTO DE PRODUCTO</label>
+        <input id="file" type="file" class="form-control" name="file" required accept="image/*">
       </div>
 
     <div class="mt-5">

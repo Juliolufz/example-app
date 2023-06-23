@@ -415,6 +415,7 @@ video{
 }
 .carouselanterior{
     text-align: center;
+    color: var(--color5);
     left: -30px;
 }
 

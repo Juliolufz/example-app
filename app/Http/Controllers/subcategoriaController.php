@@ -38,10 +38,15 @@ class subcategoriaController extends Controller
      */
     public function store(Request $request)
     {
+        $name = $request['file']->getClientOriginalName();
+        $destino = "img";
+        $filename = $request['file']->move($destino, $name);
+
         $subcategorias = new subcategoria();
         $subcategorias->nombre = $request->input('nombre');
         $subcategorias->descripcion = $request->input('descripcion');
         $subcategorias->categorias_id = $request->input('categoria');
+        $subcategorias->file = $filename;
         $subcategorias->estado = 1;
         $subcategorias->save();
 
@@ -77,6 +82,14 @@ class subcategoriaController extends Controller
         $subcategoria->nombre = $request->input('nombre');
         $subcategoria->descripcion = $request->input('descripcion');
         $subcategoria->categorias_id = $request->input('categoria');
+
+        if ($request->hasFile('file')) {
+            $name = $request->file('file')->getClientOriginalName();
+            $destino = "img";
+            $filename = $request->file('file')->move($destino, $name);
+            $subcategoria->file = $filename;
+        }
+
         $subcategoria->save();
 
         return redirect(route('subcategorias.index'));

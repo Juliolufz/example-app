@@ -312,8 +312,8 @@
 
                 <div class="carousel contenedor">
                     <div class="carousel--contenedor">
-                        <button  aria-label="Anterior" class="carouselanterior">
-                            <i class="fa-sharp fa-solid fa-chevrons-right"></i>
+                        <button  aria-label="Anterior" class="carouselanterior" style="color: #253041;">
+                            <i class="fa-duotone fa-chevrons-rigt"></i>
                         </button>
 
                         <div class="glider">

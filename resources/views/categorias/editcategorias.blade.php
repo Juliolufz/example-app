@@ -7,7 +7,7 @@
 
 @section('content')
 
-<form action="{{route('categorias.update',$categoria->id)}}" method="POST">
+<form action="{{route('categorias.update',$categoria->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="mb-3 mt-3">
@@ -18,6 +18,12 @@
       <label for="" class="form-label">DESCRIPCION</label>
       <input type="text" class="form-control" id="descripcion" name="descripcion" required value="{{$categoria->descripcion}}">
     </div>
+
+    <div class="mb-3 mt-3">
+        <label class="form-label">FOTO DE PRODUCTO</label>
+        <input id="file" type="file" class="form-control" name="file"  accept="image/*" >
+      </div>
+
     <div class="mt-5">
         <button type="submit" class="btn btn-success mr-2">GUARDAR</button>
         <a href="{{route('categorias.index')}}" class="btn btn-danger">CANCELAR</a>

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('productos.update', $producto->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('productos.update', $producto->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3 mt-3">
